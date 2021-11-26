@@ -16,6 +16,9 @@ class Shop
 
     void showMenu();
     void addItem(Item item);
+    void processOrder();
+    int findItemIndex(int id);
+    Item getItem(int index);
 
 
 

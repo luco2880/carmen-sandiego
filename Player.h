@@ -2,6 +2,8 @@
 #define PLAYER_H
 
 #include <iostream>
+#include <vector>
+#include "Item.h"
 
 using namespace std; 
 
@@ -16,6 +18,7 @@ class Player
 
     private :
     string name;
+    vector<Item> player_inventory;
 
 
 };

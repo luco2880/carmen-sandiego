@@ -11,6 +11,7 @@ class Screen
     Screen();
 
     void display(string text);
+    int collectNumberInput();
 
     private :
 

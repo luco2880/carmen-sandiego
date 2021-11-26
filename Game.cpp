@@ -24,6 +24,7 @@ void Game::run()
         }
         player.setName(input);
         shop.showMenu();
+        shop.processOrder();
         
     }
 }

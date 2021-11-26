@@ -60,3 +60,34 @@ void Shop::addItem(Item item)
 {
     inventory.push_back(item);
 }
+int Shop::findItemIndex(int id)
+{
+    for (int i = 0; i < inventory.size(); i++)
+    {
+    if (id == inventory[i].getId())
+    {
+        return i;
+    }
+    }
+    return -1;
+}
+Item Shop::getItem(int index)
+{
+    return inventory[index];
+}
+void Shop::processOrder()
+{
+    int option = screen.collectNumberInput();
+    int index = findItemIndex(option);
+    if (index == -1)
+    {
+        screen.display("Invalid input.");
+        return;
+    }
+    Item itemWanted = getItem(index);
+    screen.display("How many do you want?");
+    int number_of_items = screen.collectNumberInput();
+    
+
+
+}

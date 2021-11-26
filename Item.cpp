@@ -8,6 +8,7 @@ Item::Item(string m_name, int m_cost, int m_type, int m_id)
     type = m_type;
     id = m_id;
 }
+
 string Item::getName()
 {
     return name;
@@ -19,4 +20,10 @@ int Item::getCost()
 int Item::getId()
 {
     return id;
+}
+
+Item Item::cloneItem()
+{
+    Item new_Item = Item(name, cost, type, id);
+    return new_Item;
 }

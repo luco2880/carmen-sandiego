@@ -1,5 +1,5 @@
-#ifndef COMPUTERPARTITEM_H
-#define COMPUTERPARTITEM_H
+#ifndef COMPUTER_H
+#define COMPUTER_H
 
 
 #include <iostream>
@@ -7,15 +7,15 @@
 
 using namespace std; 
 
-class ComputerPartItem : public Item
+class Computer : public Item
 {
     public :
 
-    ComputerPartItem(string m_name, int m_cost, int m_type, int m_id);
+    Computer(string m_name, int m_cost, int m_type, int m_id);
 
     int getQuantity();
     void setQuantity(int m_quantity);
-    ComputerPartItem cloneItem();
+    Computer cloneComputer();
 
 
     private :

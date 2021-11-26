@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Shop.h"
+#include "ComputerPartItem.h"
+#include "Computer.h"
 
 
 
@@ -8,9 +10,9 @@ Shop::Shop()
     
 
     ItemType computer_part_item_type = ItemType("COMPUTER PARTS", "If your computer breaks, you need 5 computer parts to make a new one.", 1);
-    vector<Item> computer_part_items = { Item("CPU", 10, 1, 1), Item("GPU", 20, 1, 2), Item("Power Supply Unit", 5, 1, 3),
-     Item("Computer Case", 15, 1, 4), Item("internet card", 5, 1, 5),
-     Item("keyboard and mouse", 10, 1, 6), Item("premade computer", 100, 1, 7)};
+    vector<Item> computer_part_items = { ComputerPartItem("CPU", 10, 1, 1), ComputerPartItem("GPU", 20, 1, 2), ComputerPartItem("Power Supply Unit", 5, 1, 3),
+     ComputerPartItem("Computer Case", 15, 1, 4), ComputerPartItem("internet card", 5, 1, 5),
+     ComputerPartItem("keyboard and mouse", 10, 1, 6), Computer("premade computer", 100, 1, 7)};
     computer_part_item_type.setItems(computer_part_items);
 
     ItemType antivirus_software_item_type = ItemType("ANTIVIRUS SOFTWARE", "If your computer is infected with a virus, use the antivirus software to get rid of it.", 2);

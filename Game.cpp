@@ -8,7 +8,7 @@ Game::Game()
 {
     Screen screen; 
     Player player;
-    Shop shop;
+    Shop shop(player);
 }
 
 void Game::run()

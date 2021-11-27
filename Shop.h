@@ -1,7 +1,9 @@
 #ifndef SHOP_H
 #define SHOP_H
 
+
 #include "Screen.h"
+#include "Player.h"
 #include "Item.h"
 #include "ItemType.h"
 #include <iostream>
@@ -13,6 +15,7 @@ class Shop
 {
     public :
     Shop();
+    Shop(Player m_player);
 
     void showMenu();
     void addItem(Item item);
@@ -26,7 +29,7 @@ class Shop
     vector<Item> inventory;
     vector<ItemType> item_types;
     Screen screen;
-
+    Player player;
 
 };
  

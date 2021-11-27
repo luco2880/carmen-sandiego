@@ -4,10 +4,12 @@
 #include "Computer.h"
 
 
-
-Shop::Shop()
-{
+Shop::Shop() {
     
+}
+Shop::Shop(Player m_player)
+{
+    player = m_player;
 
     ItemType computer_part_item_type = ItemType("COMPUTER PARTS", "If your computer breaks, you need 5 computer parts to make a new one.", 1);
     vector<Item> computer_part_items = { ComputerPartItem("CPU", 10, 1, 1), ComputerPartItem("GPU", 20, 1, 2), ComputerPartItem("Power Supply Unit", 5, 1, 3),

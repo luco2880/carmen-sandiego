@@ -21,7 +21,7 @@ class Shop
     void showMenu();
     void addItem(Item item);
     void processOrder();
-    bool purchaseValidation(int number_purchased, Item item);
+    bool isPurchaseValid(int number_purchased, Item item);
     int findItemIndex(int id);
     Item getItem(int index);
 

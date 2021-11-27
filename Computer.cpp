@@ -8,14 +8,7 @@ Computer::Computer(string m_name, int m_cost, int m_type, int m_id) : Item( m_na
 }
 
 
-void Computer::setQuantity(int m_quantity)
-{
-    quantity = m_quantity;
-}
-int Computer::getQuantity()
-{
-    return quantity;
-}
+
 Computer Computer::cloneComputer()
 {
     Computer new_Computer = Computer(name, cost, type, id);

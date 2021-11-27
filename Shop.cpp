@@ -54,6 +54,7 @@ Shop::Shop(Player m_player)
 
 }
 void Shop::showMenu() {
+            cout << "done" << endl;
     for (int i = 0; i < item_types.size(); i++)
     {
     ItemType item_type = item_types[i];
@@ -67,10 +68,7 @@ void Shop::showMenu() {
         }
     }
 }
-void Shop::addItem(Item item)
-{
-    inventory.push_back(item);
-}
+
 int Shop::findItemIndex(int id)
 {
     for (int i = 0; i < inventory.size(); i++)
@@ -86,7 +84,7 @@ Item Shop::getItem(int index)
 {
     return inventory[index];
 }
-bool Shop::purchaseValidation(int number_purchased, Item item)
+bool Shop::isPurchaseValid(int number_purchased, Item item)
 {
     int cost_of_item = item.getCost();
     if (player.getDogecoins() < (cost_of_item * number_purchased))
@@ -105,10 +103,13 @@ void Shop::processOrder()
         screen.display("Invalid input.");
         return;
     }
-    Item itemWanted = getItem(index);
+    Item item_wanted = getItem(index);
     screen.display("How many do you want?");
     int number_of_items = screen.collectNumberInput();
-    
-
-
+    bool check_purchase = isPurchaseValid(number_of_items, item_wanted);
+    if(check_purchase == true) {
+        Item new_item = item_wanted.cloneItem();
+        new_item.setQuantity(number_of_items);
+        player.transferItemToInventory(new_item);
+    }
 }

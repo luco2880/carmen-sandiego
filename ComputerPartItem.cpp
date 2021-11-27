@@ -8,14 +8,7 @@ ComputerPartItem::ComputerPartItem(string m_name, int m_cost, int m_type, int m_
 }
 
 
-void ComputerPartItem::setQuantity(int m_quantity)
-{
-    quantity = m_quantity;
-}
-int ComputerPartItem::getQuantity()
-{
-    return quantity;
-}
+
 ComputerPartItem ComputerPartItem::cloneItem()
 {
     ComputerPartItem new_ComputerPartItem = ComputerPartItem(name, cost, type, id);

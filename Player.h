@@ -14,6 +14,9 @@ class Player
 
     string getName();
     int getDogecoins();
+    void transferItemToInventory(Item item);
+    int findItemIndex(int id);
+    Item getItem(int index);
 
     void setName(string m_name);
 

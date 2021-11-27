@@ -4,11 +4,11 @@
 #include "Screen.h"
 #include "Shop.h"
 
-Game::Game()
+Game::Game(Player m_player)
 {
     Screen screen; 
-    Player player;
-    Shop shop(player);
+    Player player = m_player;
+    Shop shop(m_player);
 }
 
 void Game::run()
@@ -24,6 +24,7 @@ void Game::run()
         }
         player.setName(input);
         shop.showMenu();
+
         shop.processOrder();
         
     }

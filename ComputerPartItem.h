@@ -13,8 +13,7 @@ class ComputerPartItem : public Item
 
     ComputerPartItem(string m_name, int m_cost, int m_type, int m_id);
 
-    int getQuantity();
-    void setQuantity(int m_quantity);
+
     ComputerPartItem cloneItem();
 
 

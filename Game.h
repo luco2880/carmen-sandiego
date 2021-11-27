@@ -14,6 +14,7 @@ class Game
 {
     public :
     Game();
+    Game(Player m_player);
 
     void run();
 

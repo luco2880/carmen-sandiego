@@ -14,6 +14,9 @@ class Item
 
     int getCost();
     int getId();
+    int getQuantity();
+
+    void setQuantity(int m_quantity);
 
     string getName();
     Item cloneItem();

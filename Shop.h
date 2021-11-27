@@ -6,6 +6,7 @@
 #include "Player.h"
 #include "Item.h"
 #include "ItemType.h"
+#include "Player.h"
 #include <iostream>
 #include <vector>
 
@@ -20,6 +21,7 @@ class Shop
     void showMenu();
     void addItem(Item item);
     void processOrder();
+    bool purchaseValidation(int number_purchased, Item item);
     int findItemIndex(int id);
     Item getItem(int index);
 
@@ -30,6 +32,7 @@ class Shop
     vector<ItemType> item_types;
     Screen screen;
     Player player;
+
 
 };
  

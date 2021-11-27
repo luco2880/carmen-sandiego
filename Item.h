@@ -24,7 +24,7 @@ class Item
     int type;
     int id;
     int quantity;
-    int capacity;
+
 
 };
  

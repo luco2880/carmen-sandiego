@@ -1,10 +1,14 @@
 #include <iostream>
+#include "Player.h"
 #include "Shop.h"
 #include "ComputerPartItem.h"
 #include "Computer.h"
 
 
-Shop::Shop() {
+
+
+Shop::Shop()
+{
     
 }
 Shop::Shop(Player m_player)
@@ -43,7 +47,10 @@ Shop::Shop(Player m_player)
     virtual_private_network_item_type,
     internet_provider_item_type
     };
+
     Screen screen;
+
+    player = m_player;
 
 }
 void Shop::showMenu() {
@@ -78,6 +85,16 @@ int Shop::findItemIndex(int id)
 Item Shop::getItem(int index)
 {
     return inventory[index];
+}
+bool Shop::purchaseValidation(int number_purchased, Item item)
+{
+    int cost_of_item = item.getCost();
+    if (player.getDogecoins() < (cost_of_item * number_purchased))
+    {
+        screen.display("Not enough Dogecoins for purchase.");
+        return false;
+    }
+    return true;
 }
 void Shop::processOrder()
 {

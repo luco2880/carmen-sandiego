@@ -15,5 +15,4 @@ int main()
 
 // HOW TO COMMIT ( SAVE )
 
-// git add .
-// git commit -m "put your commit message here"
+// git add . && git commit -m "put your commit message here"

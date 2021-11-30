@@ -6,7 +6,7 @@
 Player::Player()
 {
     name = "";
-    dogecoins = 2;
+    dogecoins = 200;
     player_inventory = {Computer("Computer", 100, 1, 7), Item("VPN", 20, 3, 9)};
 }
 

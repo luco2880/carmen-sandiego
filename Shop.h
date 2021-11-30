@@ -16,8 +16,9 @@ class Shop
 {
     public :
     Shop();
-    Shop(Player m_player);
 
+
+    void shopSetUp(Player m_player);
     void showMenu();
     void addItem(Item item);
     void processOrder();

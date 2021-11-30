@@ -5,15 +5,13 @@
 #include "Computer.h"
 
 
-
-
 Shop::Shop()
 {
     
 }
-Shop::Shop(Player m_player)
+
+void Shop::shopSetUp(Player m_player)
 {
-    player = m_player;
 
     ItemType computer_part_item_type = ItemType("COMPUTER PARTS", "If your computer breaks, you need 5 computer parts to make a new one.", 1);
     vector<Item> computer_part_items = { ComputerPartItem("CPU", 10, 1, 1), ComputerPartItem("GPU", 20, 1, 2), ComputerPartItem("Power Supply Unit", 5, 1, 3),
@@ -54,19 +52,22 @@ Shop::Shop(Player m_player)
 
 }
 void Shop::showMenu() {
-            cout << "done" << endl;
+    screen.display("==================BestBuy====================");
     for (int i = 0; i < item_types.size(); i++)
     {
     ItemType item_type = item_types[i];
-    screen.display(to_string(item_type.getId()) + ") " + item_type.getName());
+    screen.display(to_string(item_type.getId()) + "- " + item_type.getName() + "\n");
     screen.display(" " + item_type.getDescription() + " \n");
     vector<Item> items = item_type.getItems();
 
         for(int j = 0; j < item_type.getItems().size(); j++) {
             Item item = item_type.getItems()[j];
-            screen.display(to_string(item.getId()) + " " + item.getName() + " " + to_string(item.getCost()));
+            
+            screen.display(to_string(item.getId()) + ") " + item.getName() + " Price: " + to_string(item.getCost()));
+            cout << endl;
         }
     }
+    screen.display("Choose what you would like to buy by selecting the number next to the item.");
 }
 
 int Shop::findItemIndex(int id)

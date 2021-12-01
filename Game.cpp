@@ -18,11 +18,10 @@ void Game::playTurn()
 {
     map.displayMap();
     map.displayMoves();
-    char move;
-    cin.get(move);
+    char move = screen.collectCharInput();
     map.executeMove(move);
     screen.clear();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    screen.clearBuffer();
 }
 
 void Game::setUpMap()

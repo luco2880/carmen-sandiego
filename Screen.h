@@ -12,6 +12,8 @@ class Screen
 
     void display(string text);
     void clear();
+    void clearBuffer();
+    char collectCharInput();
     int collectNumberInput();
 
     private :

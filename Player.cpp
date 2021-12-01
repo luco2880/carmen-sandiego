@@ -95,6 +95,9 @@ int Player::getQuantityOfItem(int id)
 void Player::attackHacker(int hacker_difficulty)
 {
     int VPN_count = getQuantityOfItem(9);
+    int ISPindex = findItemIndex(14);
+    int ISP_level = player_inventory[ISPindex].getLevel();
+    
 }
 
 void Player::setISPLevel(int m_level)

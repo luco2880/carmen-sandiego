@@ -26,6 +26,10 @@ int Item::getQuantity()
 {
     return quantity;
 }
+int Item::getType()
+{
+    return type;
+}
 
 void Item::setQuantity(int m_quantity)
 {

@@ -95,7 +95,7 @@ bool Shop::isPurchaseValid(int number_purchased, Item item)
     }
     return true;
 }
-void Shop::processOrder()
+void Shop::processOrder(Player& m_player)
 {
     int option = screen.collectNumberInput();
     int index = findItemIndex(option);
@@ -108,9 +108,9 @@ void Shop::processOrder()
     screen.display("How many do you want?");
     int number_of_items = screen.collectNumberInput();
     bool check_purchase = isPurchaseValid(number_of_items, item_wanted);
-    if(check_purchase == true) {
+    if(check_purchase == true) { 
         Item new_item = item_wanted.cloneItem();
         new_item.setQuantity(number_of_items);
-        player.transferItemToInventory(new_item);
+        m_player.transferItemToInventory(new_item);
     }
 }

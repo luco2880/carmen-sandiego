@@ -56,6 +56,7 @@ class Map
           bool spawnNPC(int, int);
           bool spawnBestBuy(int, int);
           bool spawnHacker(int, int);
+          bool despawnHacker(int, int);
 
           void displayMap();
           void displayMoves();  

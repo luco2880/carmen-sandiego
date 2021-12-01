@@ -15,6 +15,7 @@ class Item
     int getCost();
     int getId();
     int getQuantity();
+    int getType();
 
     void setQuantity(int m_quantity);
 

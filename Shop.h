@@ -21,7 +21,7 @@ class Shop
     void shopSetUp(Player m_player);
     void showMenu();
     void addItem(Item item);
-    void processOrder();
+    void processOrder(Player& m_player);
     bool isPurchaseValid(int number_purchased, Item item);
     int findItemIndex(int id);
     Item getItem(int index);

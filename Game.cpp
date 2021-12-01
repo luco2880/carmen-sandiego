@@ -39,7 +39,7 @@ void Game::setUpMap()
     map.spawnNPC(2, 5);
     map.spawnNPC(3, 8);
     map.spawnHacker(0, 1);
-    Hacker hacker1("Steve", 0, 1);
+    Hacker hacker1("Steve",1 , 0, 1);
     hackers.push_back(hacker1);
 
 }

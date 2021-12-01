@@ -22,6 +22,9 @@ class Player
 
     void setName(string m_name);
     void displayPlayerInventory();
+    void attackHacker(int hacker_difficulty);
+    int getQuantityOfItem(int id);
+    void setISPLevel(int m_level);
 
     private :
     string name;

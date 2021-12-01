@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Shop.h"
 #include "ComputerPartItem.h"
+#include "InternetProvider.h"
 #include "Computer.h"
 
 
@@ -28,8 +29,8 @@ void Shop::shopSetUp(Player m_player)
     virtual_private_network_item_type.setItems(virtual_private_network_items);
 
     ItemType internet_provider_item_type = ItemType("INTERNET PROVIDER.", "The better the internet provider, the more reliable your hacking will be.", 4);
-    vector<Item> internet_provider_items = { Item("Internet provider level 2", 10, 4, 10), Item("Internet provider level 3", 25, 4, 11),
-    Item("Internet provider level 4", 40, 4, 12), Item("Internet provider level 5", 50, 4, 13)};
+    vector<Item> internet_provider_items = { InternetProvider("Internet provider level 2", 10, 4, 10, 2), InternetProvider("Internet provider level 3", 25, 4, 11, 3),
+    InternetProvider("Internet provider level 4", 40, 4, 12, 4), InternetProvider("Internet provider level 5", 50, 4, 13, 5)};
     internet_provider_item_type.setItems(internet_provider_items);
    
    inventory = { };
@@ -110,7 +111,14 @@ void Shop::processOrder(Player& m_player)
     bool check_purchase = isPurchaseValid(number_of_items, item_wanted);
     if(check_purchase == true) { 
         Item new_item = item_wanted.cloneItem();
-        new_item.setQuantity(number_of_items);
-        m_player.transferItemToInventory(new_item);
+        if (new_item.getType() == 4)
+        {
+            m_player.setISPLevel(new_item.getLevel());
+        }
+        else
+        {
+            new_item.setQuantity(number_of_items);
+            m_player.transferItemToInventory(new_item);
+        }
     }
 }

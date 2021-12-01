@@ -30,6 +30,14 @@ int Item::getType()
 {
     return type;
 }
+void Item::setLevel(int m_level)
+{
+
+}
+int Item::getLevel()
+{
+    return -1;
+}
 
 void Item::setQuantity(int m_quantity)
 {

@@ -16,10 +16,12 @@ class Item
     int getId();
     int getQuantity();
     int getType();
+    void setLevel(int m_level);
+    int getLevel();
 
     void setQuantity(int m_quantity);
 
-    string getName();
+    virtual string getName();
     Item cloneItem();
 
     protected:

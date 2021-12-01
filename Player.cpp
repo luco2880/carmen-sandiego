@@ -2,6 +2,7 @@
 #include "Player.h"
 #include "Computer.h"
 #include "ComputerPartItem.h"
+#include "InternetProvider.h"
 #include "Screen.h"
 
 Player::Player()
@@ -9,7 +10,7 @@ Player::Player()
     Screen screen;
     name = "";
     dogecoins = 200;
-    player_inventory = {Computer("Computer", 100, 1, 7), Item("VPN", 20, 3, 9)};
+    player_inventory = {Computer("Computer", 100, 1, 7), Item("VPN", 20, 3, 9), InternetProvider("Internet Provider", 1, 4, 14, 1)};
 }
 
 string Player::getName()
@@ -80,8 +81,24 @@ void Player::displayPlayerInventory()
     screen.display("===============\n");     
     for (int i = 0; i < player_inventory.size(); i++)
     {
-        screen.display(player_inventory[i].getName() + to_string(player_inventory[i].getQuantity()));
+        screen.display(player_inventory[i].getName() + " " + to_string(player_inventory[i].getQuantity()));
     }
     screen.display("===============\n"); 
 }
 
+int Player::getQuantityOfItem(int id)
+{
+    int index = findItemIndex(id);
+    return player_inventory[index].getQuantity();
+}
+
+void Player::attackHacker(int hacker_difficulty)
+{
+    int VPN_count = getQuantityOfItem(9);
+}
+
+void Player::setISPLevel(int m_level)
+{
+    int index = findItemIndex(14);
+    player_inventory[index].setLevel(m_level);
+}

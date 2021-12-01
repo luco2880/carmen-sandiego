@@ -225,7 +225,7 @@ void Map::displayMoves(){
  * Parameters: move (char) -- 'w' (up), 'a' (left), 's' (down), 'd' (right)
  * Return: (bool) if move is valid, then true, else false
  */
-bool Map::executeMove(char move){
+bool Map::executeMove(char move){ cout << "it was ran" << endl;
     // if user inputs w, move up if it is an allowed move
     if(!(playerPosition[0] == 0) && (tolower(move) == 'w')){
         playerPosition[0] -= 1;
@@ -233,6 +233,7 @@ bool Map::executeMove(char move){
     }
     // if user inputs s, move down if it is an allowed move
     else if(!(playerPosition[0] == (num_rows - 1))&& (tolower(move) == 's')){
+        cout << "made it" << endl;
         playerPosition[0] += 1;
         return true; 
     }

@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include "Game.h"
 #include "Player.h"
 #include "Screen.h"
@@ -20,7 +21,8 @@ void Game::playTurn()
     char move;
     cin.get(move);
     map.executeMove(move);
-    
+    screen.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 void Game::setUpMap()
@@ -36,17 +38,23 @@ void Game::setUp()
 {
     shop.shopSetUp(player);
     setUpMap();
+    string input;
+    screen.display("Enter player name: ");
+    getline(cin, input);
+    player.setName(input);
+    shop.showMenu();
+    shop.processOrder();
 }
 
 void Game::run()
 {
-        setUp();
-        string input;
-        screen.display("Enter player name: ");
-        getline(cin, input);
-        player.setName(input);
-        shop.showMenu();
-        shop.processOrder();
+    setUp();
+    while (true)
+    {
+        playTurn();
+
+    }   
+
 
 
 }

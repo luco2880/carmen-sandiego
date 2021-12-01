@@ -11,6 +11,11 @@ void Screen::display(string text)
     cout << text << endl;
 }
 
+void Screen::clear()
+{
+    cout << "\033[2J\033[1;1H";
+}
+
 int Screen::collectNumberInput()
 {
     string input;
